@@ -69,8 +69,27 @@ class StudentCard extends BusCard {
   }
 }
 
+// ===== Part 3: main =====
 void main() {
+  // My numbers: D = 57, L = 7
+  // Starting balance = 1570 RWF, Bus fare = 257 RWF, Discount = 17%
+
+  BusCard card = BusCard('Asmaa', 1570);
+  card.owner = 'Al';
+  card.showInfo();
+
+  card.owner = 'Asmaa Tagelsir';
+  card.showInfo();
+
+  card.topUp(100);
+  card.topUp(2000);
+
+  card.pay(257);
+  card.pay(257);
+  card.showInfo();
+
   StudentCard student = StudentCard('Asmaa Tagelsir', 1570, 17);
+
   student.pay(257);
   student.showInfo();
 }
