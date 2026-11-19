@@ -1,6 +1,7 @@
 # Dart OOP Assignment: Kigali Bus Card
 
 **Name:** Asmaa Tagelsir
+
 **Student ID:** 26057
 
 ## My numbers
@@ -38,7 +39,7 @@ A setter would let any code write `card.balance = 1000000` and skip all the rule
 ## Part 4: Bug table
 
 | Bug | The line | Why it is wrong (your words) | Your fix |
-|---|---|---|---|
+|-----|----------|------------------------------|----------|
 | 1 | `String _brand;` and `int _battery;` | Fields that cannot be null must have a starting value, otherwise Dart gives an error. | `String _brand = '';` and `int _battery = 0;` |
 | 2 | `SmartPhone(String brand, int battery, String system) {` | The constructor does not call the parent constructor, so Phone cannot be built. | Added `: super(brand, battery)` |
 | 3 | `@override` above `void restart()` | `@override` only works when the parent has that method, and Phone has no `restart`. | Removed `@override` |
