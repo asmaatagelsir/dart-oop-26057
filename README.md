@@ -56,3 +56,12 @@ It prints `1` and then `5`.
 
 - For `a`: `add()` makes `_items` 1. Then `a.items = -5` goes through the setter, but -5 is not `>= 0`, so it is refused and `_items` stays 1. It prints `1`.
 - For `b` (a BigBag): its `add()` calls `super.add()` twice, so each `add()` adds 2. Two calls make 4. Then `b.items = b.items + 1` sets 5, which is allowed. It prints `5`.
+
+Real output:
+
+```
+1
+5
+```
+
+Was I right? Yes, both lines matched my prediction.
