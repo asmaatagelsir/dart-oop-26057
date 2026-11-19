@@ -79,8 +79,33 @@ class StudentCard extends BusCard {
   }
 }
 
+// ===== Part 3: main =====
 void main() {
+  // My numbers: D = 57, L = 7
+  // Starting balance = 1570 RWF, Bus fare = 257 RWF, Discount = 17%
+
+  // EXAMPLE: create a card and test the setter
+  BusCard card = BusCard('Asmaa', 1570);
+  card.owner = 'Al'; // refused: name too short
+  card.showInfo();
+
+  // TODO 5: change the owner to my full name
+  card.owner = 'Asmaa Tagelsir';
+  card.showInfo();
+
+  // TODO 6: top up 100 RWF (refused), then 2000 RWF
+  card.topUp(100);
+  card.topUp(2000);
+
+  // TODO 7: pay the bus fare 2 times
+  card.pay(257);
+  card.pay(257);
+  card.showInfo();
+
+  // TODO 8: StudentCard with my name, starting balance and discount
   StudentCard student = StudentCard('Asmaa Tagelsir', 1570, 17);
+
+  // TODO 9: pay the bus fare with the student card
   student.pay(257);
   student.showInfo();
 }
