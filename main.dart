@@ -54,12 +54,33 @@ class BusCard {
   }
 }
 
+// ===== Part 2: StudentCard =====
+class StudentCard extends BusCard {
+  int _discount = 0;
+
+  // Constructor (done for you)
+  StudentCard(String owner, int balance, int discount) : super(owner, balance) {
+    _discount = discount;
+  }
+
+  // EXAMPLE: override showInfo (done for you)
+  @override
+  void showInfo() {
+    super.showInfo(); // run the parent's showInfo first
+    print('Student card: $_discount% off');
+  }
+
+  // TODO 4: override pay with the student discount
+  @override
+  void pay(int fare) {
+    int off = fare * _discount ~/ 100;
+    print('Student discount: $off RWF');
+    super.pay(fare - off);
+  }
+}
+
 void main() {
-  BusCard card = BusCard('Asmaa', 1570);
-  card.owner = 'Al'; // refused: name too short
-  card.showInfo();
-  card.topUp(100);
-  card.topUp(2000);
-  card.pay(257);
-  card.showInfo();
+  StudentCard student = StudentCard('Asmaa Tagelsir', 1570, 17);
+  student.pay(257);
+  student.showInfo();
 }
